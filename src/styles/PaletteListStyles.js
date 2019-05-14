@@ -22,7 +22,7 @@ export default {
         marginBottom: '1rem',
         marginTop: '1rem',
         "& a": {
-            color: 'white'
+            color: 'white',
         }
     },
     palettes: {
