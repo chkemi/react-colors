@@ -40,7 +40,7 @@ class Navbar extends Component {
 
     render() { 
         const {level, changeLevel, showingAllColors, classes} = this.props;
-        const { format } = this.state;
+        const { format, open } = this.state;
 
         return ( 
             <header className={classes.Navbar}>
@@ -71,7 +71,7 @@ class Navbar extends Component {
                     </Select>
                 </div>
                 <Snackbar 
-                    anchorOrigin={{vertical: 'bottom', horizontal: 'left'}} open={this.state.open} 
+                    anchorOrigin={{vertical: 'bottom', horizontal: 'left'}} open={open} 
                     autoHideDuration={3000} 
                     message={<span id='message-id'>Format Changed To {format.toUpperCase()}</span>}
                     ContentProps={{'aria-describedby': 'message-id'}}
