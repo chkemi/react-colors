@@ -48,7 +48,7 @@ class PaletteFormNav extends Component {
         const { formShowing } = this.state;
 
         return ( 
-            <div classname={classes.root}>
+            <div className={classes.root}>
                 <CssBaseline />
               <AppBar
                 position="fixed"
