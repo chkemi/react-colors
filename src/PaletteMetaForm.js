@@ -36,22 +36,19 @@ class PaletteMetaForm extends Component {
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-    
-    handleClose = () => {
-        this.setState({ open: false });
-    };
 
     render() { 
-        const { newPaletteName } = this.state;
+        const { newPaletteName, open } = this.state;
+        const { hideForm, handleSubmit } = this.props;
 
         return ( 
             <Dialog
-            open={this.state.open}
-            onClose={this.handleClose}
+            open={open}
+            onClose={hideForm}
             aria-labelledby="form-dialog-title"
             >
                 <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
-                <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
+                <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
                 <DialogContent>
                     <DialogContentText>
                         Please enter a name for your new beautiful palette. Make sure it's unique!
@@ -68,7 +65,7 @@ class PaletteMetaForm extends Component {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={this.handleClose} color="primary">
+                    <Button onClick={hideForm} color="primary">
                     Cancel
                     </Button>
                     <Button 
