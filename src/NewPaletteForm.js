@@ -15,6 +15,7 @@ import DraggableColorList from './DraggableColorList';
 
 import classNames from 'classnames';
 import styles from './styles/NewPaletteFormStyles';
+import seedColors from './seedColors';
 
 class NewPaletteForm extends Component {
   static defaultProps = {
@@ -26,7 +27,7 @@ class NewPaletteForm extends Component {
 
         this.state = {
             open: true,
-            colors: this.props.palettes[0].colors,
+            colors: seedColors[0].colors
         }
 
         this.addNewColor = this.addNewColor.bind(this);
